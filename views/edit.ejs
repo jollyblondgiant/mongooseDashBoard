@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='/css/style.css'>
+    <script src='/socket.io/socket.io.js'></script>
+    <script type='text/javascript' src='/js/script.js'></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <form action="/<%= snakes[0].id %>" method="POST">
+
+        <div class="input-group mb-3">
+           
+
+        </div>
+        <div class="form-group">
+            <label for="name">Change Name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="<%= snakes[0].name %>">
+        </div>
+        <div class="form-group">
+            <label for="info">Update Info:</label>
+            <textarea name="info" class="form-control" id="info" rows="3" placeholder="<%= snakes[0].info %>"></textarea>
+        </div>
+        <button class="btn btn-success">UPDERT!</button>
+        <a href="/" , class="btn btn-primary">Back to Snakes!</a>
+        <a href="/destroy/<%= snakes[0].id %>" , class="btn btn-danger">Delete Snek!</a>
+
+        <% if(messages.registration){ %>
+        <div id="errors">
+            <% for(var x of messages.registration){ %>
+            <h3>
+                <%= x %>
+            </h3>
+            <% } %>
+        </div>
+        <% } %>
+
+
+
+</body>
+
+</html>

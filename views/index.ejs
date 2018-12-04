@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel = 'stylesheet' href = 'css/style.css'>
+<script src='/socket.io/socket.io.js'></script>
+<script type='text/javascript' src='js/script.js'></script>
+<title>Document</title>
+</head>
+<body>
+        <a href="new", class="btn btn-success">Add a snake!</a><br/>
+        <% var idx = 0 %>
+    <% for(var snake in snakes){ %>
+        <% idx++ %>
+        
+        <a id ="<%= snakes[snake].id %>" href="edit/<%= snakes[snake].id %>">
+            <img id = '<%=  idx%>' border="0" src="https://i.pinimg.com/originals/a3/5c/d2/a35cd25590aadd546d4552611e25ca40.jpg" alt="<%= snakes[snake].name %>">
+        </a>
+        <br/>
+        <p class="snakeName toggleBox <%= idx%>">
+            <%= snakes[snake].name %>
+        </p>
+        <p class="snakeInfo toggleBox <%= idx%>">
+            <%= snakes[snake].info %>
+        </p>
+        </div>
+            
+        <% } %>
+    
+</body>
+</html>
